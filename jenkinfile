@@ -1,13 +1,13 @@
 pipeline {
     agent any
-     tools {
-   terraform 'terraform'
+    tools {
+  terraform 'Terraform_pipeline'
 }
 
     stages {
         stage('Git checkout') {
            steps {
-                git branch: 'master', git credentialsId: 'github', url: 'https://github.com/gogineniprathyusha/Jenkinspipeline_terraform.git'
+                git branch: 'master', credentialsId: 'github', url: 'https://github.com/gogineniprathyusha/Jenkinspipeline_terraform.git'
             }
         }
         stage('terraform format check') {
